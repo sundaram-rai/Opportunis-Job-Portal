@@ -57,7 +57,8 @@ Follow the steps below to set up the application locally.
 
 4. Start the application:
    ```sh
-   npm start
+   cd frontend
+   npm run dev
    ```
-5. Open your browser and navigate to `http://localhost:3000` to view the app.
+5. Open your browser and visit `http://localhost:3000` to see the app in action.
 
