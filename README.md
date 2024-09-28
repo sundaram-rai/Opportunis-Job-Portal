@@ -1,49 +1,48 @@
-# Job Portal App with MERN Stack
+# Opportunis Job Portal (MERN Stack)
 
-A comprehensive job portal application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. This application allows users to browse job listings, apply for jobs, and manage their applications seamlessly.
+A powerful job portal application built with the MERN (MongoDB, Express.js, React.js, Node.js) stack, offering job seekers and employers a smooth, efficient experience to connect with the right opportunities.
 
 ## Features
 
-- **User Authentication:** Secure authentication using JWT (JSON Web Tokens) for both job seekers and employers.
-- **Job Listings:** Browse through a wide range of job listings fetched from MongoDB.
-- **Application Management:** Job seekers can manage their job applications, and employers can view and manage received applications.
-- **Responsive Design:** Ensures a seamless experience across all devices.
+- **User Authentication:** Secure JWT-based authentication for both job seekers and employers.
+- **Job Listings:** Browse extensive job opportunities stored in MongoDB.
+- **Application Management:** Employers can manage job applications while job seekers can track theirs.
+- **Responsive Design:** Optimized for seamless use on any device.
 
-## Technologies Used
+## Technologies
 
 - **Frontend:** React.js, React Router, Bootstrap
 - **Backend:** Node.js, Express.js, MongoDB
-- **Authentication:** JWT (JSON Web Tokens), Bcrypt (for password hash)
-- **Image Upload:** Cloudinary for storing and managing uploaded images
-- **Deployment:** Vercel (frontend), Render(backend), MongoDB Atlas (database)
+- **Authentication:** JWT, Bcrypt (password hashing)
+- **Image Uploads:** Cloudinary (for image storage)
+- **Deployment:** Vercel (Frontend), Render (Backend), MongoDB Atlas (Database)
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+Follow the steps below to set up the application locally.
 
 ### Prerequisites
 
-- Node.js installed on your machine with latest version or v22.2.0 above
-- MongoDB Atlas account (or local MongoDB server)
-- Cloudinary account for image storage
+- **Node.js:** v22.2.0+ installed
+- **MongoDB Atlas:** or a local MongoDB server
+- **Cloudinary:** account for image management
 
 ### Installation
 
-1. Clone the repo:
+1. Clone the repository:
    ```sh
    git clone https://github.com/sundaram-rai/Opportunis-Job-Portal.git
    ```
-2. Install NPM packages:
+
+2. Install Dependencies:
    ```sh
    cd react-job-portal
-   cd backend
-   npm install
-   cd..
-   cd frontend
-   npm install
+   cd backend && npm install
+   cd ../frontend && npm install
    ```
-3. Set up environment variables:
-   - Create a `config.env` file after creating a `config folder` in the backend directory, containing the following variables:
+   
+3. Configure environment variables:
+   - Create a `config.env` file inside `backend/config/` directory and add the following:
    ```env
    PORT=
    CLOUDINARY_API_KEY=
@@ -56,9 +55,7 @@ To get a local copy up and running follow these simple steps.
    COOKIE_EXPIRE=
    ```
 
-   Replace each value with your specific configuration details.
-
-4. Run the application:
+4. Start the application:
    ```sh
    npm start
    ```
