@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../../main";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -29,9 +29,9 @@ const Navbar = () => {
 
   return (
     <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
-      <div className="container">
-        <div className="logo">
-          <img src="/careerconnect-white.png" alt="logo" />
+      <div className="container" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="logo" style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+          <img src="/opportunis-cover-transparent.png" alt="logo" style={{ width: '150px', height: '70px', paddingLeft: '20px', paddingTop: '10px', paddingBottom: '10px' }} />
         </div>
         <ul className={!show ? "menu" : "show-menu menu"}>
           <li>

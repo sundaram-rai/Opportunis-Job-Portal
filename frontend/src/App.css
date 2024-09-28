@@ -1153,6 +1153,7 @@ p {
 nav {
   background: #18191c;
   padding: 0 20px;
+  height: 90px;
 }
 nav .container {
   max-width: 1500px;

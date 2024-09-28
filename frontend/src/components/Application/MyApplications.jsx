@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../main";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import ResumeModal from "./ResumeModal";
+import PropTypes from 'prop-types';
 
 const MyApplications = () => {
   const { user } = useContext(Context);
@@ -36,7 +37,7 @@ const MyApplications = () => {
     } catch (error) {
       toast.error(error.response.data.message);
     }
-  }, [isAuthorized]);
+  }, [isAuthorized, user]);
 
   if (!isAuthorized) {
     navigateTo("/");
@@ -165,6 +166,22 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
   );
 };
 
+JobSeekerCard.propTypes = {
+  element: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    coverLetter: PropTypes.string.isRequired,
+    resume: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  deleteApplication: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired,
+};
+
 const EmployerCard = ({ element, openModal }) => {
   return (
     <>
@@ -196,4 +213,18 @@ const EmployerCard = ({ element, openModal }) => {
       </div>
     </>
   );
+};
+
+EmployerCard.propTypes = {
+  element: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    coverLetter: PropTypes.string.isRequired,
+    resume: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  openModal: PropTypes.func.isRequired,
 };
